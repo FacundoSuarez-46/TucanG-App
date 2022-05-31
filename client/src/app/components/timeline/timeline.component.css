@@ -1,0 +1,22 @@
+.panel-default{
+    border-radius: 40px;
+}
+button{
+    margin: 5px;
+}
+.user-name{
+    color: #f0c419;
+}
+div.item-publication > div > div > div > span{
+    color: #e57e25 !important;
+}
+
+div.item-publication > div > div > h4 > span{
+    color: #3c3e42 !important;
+}
+.publication-title{
+    color: #6395ad;
+}
+.h1-strong{
+    text-align: center;
+}

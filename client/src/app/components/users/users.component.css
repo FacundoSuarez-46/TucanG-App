@@ -1,0 +1,18 @@
+.panel-default{
+    border-radius: 40px;
+}
+.user-name{
+    color: #f0c419 !important;
+}
+
+@media only screen and (max-width: 767px){
+    button.btn{
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+    .navbar-form{
+        display: flex;
+        justify-content: center;
+    }
+}
+

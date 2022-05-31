@@ -1,0 +1,70 @@
+<h1 class="h1-strong">Hola! {{identity.name}}</h1>
+<div id="user-card" class="col-lg-4 panel panel-default pull-left">
+	<div class="avatar pull-left">
+		<img src="{{ url + 'get-image-user/' + identity.image }}" *ngIf="identity.image"/>
+		<img src="assets/user.png" *ngIf="!identity.image"/>
+	</div>
+
+	<div class="name-surname pull-left">
+		<a [routerLink]="['/perfil',identity._id]" class="username" title="Perfil">
+			<span class="glyphicon glyphicon-user"></span>
+			{{identity.name +' '+ identity.surname}}
+		</a>
+		<p class="nickname"><a [routerLink]="['/mis-datos']" class="glyphicon glyphicon-pencil" title="Editar Datos"></a> {{identity.nick}}</p>
+		<div class="clearfix"></div>
+	</div>
+
+	<div class="clearfix"></div>
+</div>
+
+<!--formulario de publicaciones-->
+<div id="new-publication" class="col-lg-4 pull-left panel panel-default">
+	
+	<div class="alert alert-success" *ngIf="status == 'success'">
+		Publicación subida correctamente
+	</div>
+	<div class="alert alert-danger" *ngIf="status == 'error'">
+		Publicacion incorrecta
+	</div>
+
+	<form #newPubForm="ngForm" (ngSubmit)="onSubmit(newPubForm, $event);" class="col-lg-10">
+			<h2 style="color: #f29c1f; text-align: center;">Canjea ahora!</h2>
+		<p>
+			<label>*Titulo</label>
+			<textarea style="height: 35px;" maxlength="33" title="Ingresa un titulo" name="title" #title="ngModel" [(ngModel)]="publication.title" class="form-control" required></textarea>
+			<span class="text-danger" *ngIf="!title.valid && title.touched">
+				Ingresa un titulo
+			</span> <br>
+
+			
+			<!-- <textarea title="Ingresa un interes" style="height: 35px;" maxlength="33" title="Ingresa intereses" name="type" #type="ngModel" [(ngModel)]="publication.type" class="form-control"></textarea> -->
+
+			<label>*Descripcion</label>
+			<textarea name="text" title="Ingresa una descripcion" #text="ngModel" [(ngModel)]="publication.text" class="form-control" required></textarea>
+			<span class="text-danger" *ngIf="!text.valid && text.touched">
+				Ingresa una descripcion
+			</span>
+
+			<label>Me interesa</label>
+			<select #type="ngModel" [(ngModel)]="publication.type" class="form-control" style="height: 35px;" maxlength="33" title="Me interesa" name="type">
+				<option value="Autos, Motos y Otros">Autos, Motos y Otros</option>
+				<option value="Inmuebles">Inmuebles</option>
+				<option value="Servcios">Servcios</option>
+				<option value="Entretenimiento">Entretenimiento</option>
+				<option value="Tecnologia">Tecnologia</option>
+				<option value="Moda">Moda</option>
+				<option value="Deportes y fitness">Deportes y fitness</option>
+				<option value="Otros">Otros</option>
+			  </select>
+
+			<span>Campos obligatorios (*)</span>
+		</p>
+
+		<p>
+			<label>Sube tu articulo <span class="glyphicon glyphicon-camera"></span></label>
+			<input id="miArchivo" style="color: transparent" type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/>
+		</p>
+
+		<input type="submit" value="Publicar Articulo" class="btn btn-success" [disabled]="!newPubForm.form.valid" />
+	</form>
+</div>

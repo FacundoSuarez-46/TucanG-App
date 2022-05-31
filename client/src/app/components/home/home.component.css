@@ -1,0 +1,37 @@
+button{
+    margin-right: 5px;
+}
+.panel-default{
+    border-radius: 40px;
+}
+button{
+    margin: 5px;
+}
+.user-name{
+    color: #f0c419;
+}
+div.item-publication > div > div > div > span{
+    color: #e57e25 !important;
+}
+
+div.item-publication > div > div > h4 > span{
+    color: #3c3e42 !important;
+}
+.publication-title{
+    color: #6395ad;
+}
+
+.navbar-form{
+    display: flex;
+    justify-content: center;
+}
+h3.h1-strong{
+    text-align: center;
+}
+
+@media only screen and (max-width: 767px){
+    button.btn{
+        margin-left: 30%;
+        margin-right: 30%;
+    }
+}

@@ -1,0 +1,25 @@
+.panel-default{
+    border-radius: 40px;
+}
+
+@media only screen and (max-width: 1199px) {
+    #user-card{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    #new-publication{
+        width: 90%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+    .h1-strong{
+        margin: auto;
+        text-align: center;
+    }
+
+  }
+
+  #user-card{
+      margin-top: 15px ;
+  }
